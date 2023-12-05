@@ -1,0 +1,5 @@
+fastapi
+databases[asyncpg]
+python-jose[cryptography]
+python-multipart
+uvicorn[standard]
