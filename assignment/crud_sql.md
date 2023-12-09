@@ -1,7 +1,7 @@
 # Crud SQL
 Verifying Tables & Triggers
 
-```postgresql
+```sql
 SELECT * FROM Users;
 SELECT * FROM Roles;
 SELECT * FROM Rounds;

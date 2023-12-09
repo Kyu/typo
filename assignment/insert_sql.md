@@ -1,6 +1,6 @@
 ## Insert SQL
 
-```postgresql
+```sql
 INSERT INTO Users (Username, Password) VALUES ('Precious', 'test1');
 INSERT INTO Users (Username, Password) VALUES ('Disney', 'test1');
 INSERT INTO Users (Username, Password) VALUES ('Paris', 'test1');

@@ -1,7 +1,7 @@
 # Create SQL Commands
 
 ## Create Tables
-```postgresql
+```sql
 CREATE TABLE IF NOT EXISTS Users (
     UserID          SERIAL PRIMARY KEY,
     Username        TEXT UNIQUE,
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS UserRoles (
 ```
 
 ## Create Triggers
-```postgresql
+```sql
 CREATE OR REPLACE FUNCTION calculate_avg_wpm() RETURNS TRIGGER AS $BODY$
     DECLARE New_AvgWPM DECIMAL(10,4);
     BEGIN
