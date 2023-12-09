@@ -3,19 +3,7 @@
 A description of your database, including tables, attributes, primary keys, foreign keys, 
 foreign key constraints, FDs, whether in 3NF, and one or two rows of sample data for each table. 
 
-/*
-Users:
-User ID, Name, Role Code
-
-Roles:
-Role Code, Role Name
-
-Round:
-User ID, WPM
-
-UserRoles:
-User ID, Role Code (str)
-*/
+**This software uses the latest version of PostgresSQL (16.1) for operations**
 
 ## Users
 The users of the website
@@ -32,6 +20,7 @@ The users of the website
 | Password    | TEXT           |
 | AvgWPM      | DECIMAL(10, 4) |
 
+`(1, "Precious", "Test1", 35.4)`
 
 ## Roles
 The roles/permission level of each user in the system
@@ -48,6 +37,8 @@ The roles/permission level of each user in the system
 | RolePermission | SMALLINT |
 | RoleUsers      | INTEGER  |
 
+`(1, "user", 1, 1)`
+
 ## Rounds
 Every round of typing that occurs on the website
 
@@ -63,6 +54,7 @@ Every round of typing that occurs on the website
 | WPM          | INTEGER   |
 | RoundTime    | TIMESTAMP |
 
+`(1, 1, 35.4, '2023-12-25 00:00:00')`
 
 ## UserRoles
 Represents the Role that each User has
@@ -76,3 +68,5 @@ Represents the Role that each User has
 | UserID (FK)   | INTEGER   |
 | RoleCode (FK) | INTEGER   |
 | CreatedAt     | TIMESTAMP |
+
+`(1, 1, '2023-12-24 00:00:00')`
