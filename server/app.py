@@ -2,6 +2,7 @@ from datetime import timedelta
 
 from fastapi import Depends, FastAPI, HTTPException, Security, status
 from fastapi.security import OAuth2PasswordRequestForm, OAuth2PasswordBearer
+from fastapi.middleware.cors import CORSMiddleware
 
 from . import database
 from .security import create_access_token, get_current_user
@@ -11,6 +12,15 @@ app = FastAPI()
 ACCESS_TOKEN_EXPIRE_MINUTES = 10_090
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="login")
 
+origins = ["*"]
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 @app.on_event('startup')
 async def startup():
@@ -19,8 +29,10 @@ async def startup():
 
 @app.get("/")
 async def read_home():
-    data = await database.fetch_one("SELECT * FROM Users")
-    return {"Nothing": "Here", 'a': data}
+    data = await database.fetch_all("SELECT username, avgwpm FROM Users ORDER BY avgwpm DESC")
+    if not data:
+        return {}
+    return {"leaderboard": data}
 
 
 @app.post("/login")
