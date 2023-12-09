@@ -6,3 +6,6 @@
 
 ## Video Link
 - https://youtu.be/krNKlvt5Ve4
+
+## DB Fiddle
+- https://dbfiddle.uk/u1DqJGRH
