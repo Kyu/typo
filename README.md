@@ -5,5 +5,4 @@
    * **Responsibilities**: Entire Project
 
 ## Video Link
-- TBA
-
+- https://youtu.be/krNKlvt5Ve4
